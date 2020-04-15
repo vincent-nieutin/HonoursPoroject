@@ -7,12 +7,12 @@
   </head>
   <body>
     <a-scene>
-      <a-assets>
+      <a-assets timeout="30000">
         <a-asset-item id="model" src="skelly.gltf"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 1 1"></a-camera>
-      <a-entity gltf-model="#model" position="0 0 0" scale="0.003 0.003 0.003"><a-entity>
+      <a-entity gltf-model="#model" position="0 0 0" scale="0.1 0.1 0.1"><a-entity>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
