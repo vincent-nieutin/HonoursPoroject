@@ -16,14 +16,12 @@
 
     </a-assets>
 
-    <a-camera position="0 1.2 0"></a-camera>
+    <a-camera position="0 0 0"></a-camera>
 
     <!-- 2D environment omitted for simplicity -->
 
-    <a-entity id="dino" position="0 -1.5 -6" scale="0.1 0.1 0.1">
-      <a-entity position="0 0 0" rotation="270 180 0"
-                gltf-model="#fossils"
-                shadow="cast: true; receive: false"></a-entity>
+    <a-entity id="dino" position="0 0 1.5" scale="0.1 0.1 0.1">
+      <a-entity position="0 0 0" gltf-model="#fossils" shadow="cast: true; receive: false"></a-entity>
     </a-entity>
 
 
