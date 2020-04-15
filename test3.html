@@ -8,11 +8,11 @@
   <body>
     <a-scene>
       <a-assets>
-        <a-asset-item id="skelly" src="skelly.gltf"></a-asset-item>
+        <a-asset-item id="skelly" src="skelly/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-entity gltf-model="#skelly"></a-entity>
-      <a-entity id="skelly" position="0 -0.1 -1.7" scale="0.0015 0.0015 0.0015">
+      <a-entity id="skelly" position="0 -0.1 -1.7">
         <a-entity position="0 0 0" rotation="270 180 0" gltf-model="#skelly"></a-entity>
       </a-entity>
       <a-sky color="#ECECEC"></a-sky>
