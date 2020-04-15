@@ -9,6 +9,7 @@
     <a-scene>
       <a-assets>
         <a-asset-item id="models" src="skulls.gltf"></a-asset-item>
+        <a-asset-item id="cityModel" src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item>
       </a-assets>
 
       <!--
@@ -17,6 +18,7 @@
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       !-->
+        <a-entity gltf-model="#cityModel" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
       <a-entity gltf-model="#models" position="1 1 1" scale="0.5 0.5 0.5"></a-entity>
 
       <a-sky color="#ECECEC"></a-sky>
