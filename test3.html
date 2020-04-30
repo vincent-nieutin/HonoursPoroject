@@ -39,11 +39,11 @@
       var rowLength = 5;
       var xStart = -2;
       var zStart = -5;
+      var y=0;
 
       for(var i=0; i<nums.length; i++){
-        for(var j=0; j<5; j++){
-          document.write('<a-entity gltf-part="src: #fossils; part: fossil'+nums[i]+'" position="'+(xStart+i%rowLength)+' 1 '+(zStart+j)+'"></a-entity>');
-        }
+        document.write('<a-entity gltf-part="src: #fossils; part: fossil'+nums[i]+'" position="'+(xStart+i%rowLength)+' 0 '+(zStart+y)+'"></a-entity>');
+        y++;
       };
 
     </script>
