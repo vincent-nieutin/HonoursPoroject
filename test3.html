@@ -23,13 +23,13 @@
       <a-asset-item id="fossils" src="fossils/scene.gltf"></a-asset-item>
     </a-assets>
 
-    <a-entity camera look-controls position="0 0 0">
+    <a-camera position="0 1.6 0">
       <a-entity cursor="fuse: false; fuseTimeout: 500"
                 position="0 0 -0.1"
                 geometry="primitive:ring; radiusInner: 0.0007; radiusOuter: 0.0014"
                 material="color: black; shader: flat">
       </a-entity>
-    </a-entity>
+    </a-camera>
 
     <!-- 2D environment omitted for simplicity -->
     <!--<a-sky color="#ECECEC"></a-sky>-->
@@ -42,7 +42,7 @@
       var spacing = 0.5;
 
       for(var i=0; i<parts.length; i++){
-        document.write('<a-entity gltf-part="src: #fossils; part: fossil'+parts[i]+'" position="'+(xStart+i%rowLength+spacing)+' -0.5 '+(zPos+spacing)+'"></a-entity>');
+        document.write('<a-entity gltf-part="src: #fossils; part: fossil'+parts[i]+'" position="'+(xStart+i%rowLength+spacing)+' 1.6 '+(zPos+spacing)+'" scale:"0.3 0.3 0.3"></a-entity>');
         if (i%rowLength==0 && i>0) zPos--;
       };
 
