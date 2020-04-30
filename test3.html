@@ -36,14 +36,14 @@
 
     <script>
       var parts = ["01","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21"];
-      var scale = 0.1;
+      var scale = 0.2;
       var rowLength = 5;
       var xStart = -2;
       var zPos = 0;
       //var spacing = 0.5*scale;
 
       for(var i=0; i<parts.length; i++){
-        document.write('<a-entity gltf-part="src: #fossils; part: fossil'+parts[i]+'" position="'+(xStart+i%rowLength)*scale+' 1.0 '+(zPos)*scale+'" scale="'+scale+' '+scale+' '+scale+'"></a-entity>');
+        document.write('<a-entity gltf-part="src: #fossils; part: fossil'+parts[i]+'" position="'+(xStart+i%rowLength)*scale+' 1.6 '+(zPos)*scale+'" scale="'+scale+' '+scale+' '+scale+'"></a-entity>');
         if (i%rowLength==0 && i>0) zPos--;
       };
 
