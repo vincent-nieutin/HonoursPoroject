@@ -38,11 +38,11 @@
       var parts = ["01","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21"];
       var rowLength = 5;
       var xStart = -2;
-      var zPos = -5;
+      var zPos = -1;
 
       for(var i=0; i<parts.length; i++){
         document.write('<a-entity gltf-part="src: #fossils; part: fossil'+parts[i]+'" position="'+(xStart+i%rowLength)+' 0 '+(zPos)+'"></a-entity>');
-        zPos--;
+        if (i%rowLength==0) zPos--;
       };
 
     </script>
