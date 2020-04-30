@@ -23,13 +23,13 @@
       <a-asset-item id="fossils" src="fossils/scene.gltf"></a-asset-item>
     </a-assets>
 
-    <a-camera position="0 0 0">
+    <a-entity camera look-controls position="0 0 0">
       <a-entity cursor="fuse: false; fuseTimeout: 500"
                 position="0 0 -0.1"
                 geometry="primitive:ring; radiusInner: 0.0007; radiusOuter: 0.0014"
                 material="color: black; shader: flat">
       </a-entity>
-    </a-camera>
+    </a-entity>
 
     <!-- 2D environment omitted for simplicity -->
     <a-sky color="#ECECEC"></a-sky>
