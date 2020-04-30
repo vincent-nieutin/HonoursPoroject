@@ -3,35 +3,19 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Fossils</title>
+  <title></title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script> -->
 
 </head>
 
 <body>
-<script type="text/javascript">
-  console.log("Registering button");
-  AFRAME.registerComponent('startButton', {
-    init: function () {
-      var cube = document.querySelector("#boxId");
-      cube.addEventListener("mouseenter",function(evt){
-        console.log("Mouse enter");
-        cube.setAttribute('material', 'color',"red");
-      });
-      cube.addEventListener("mouseleave",function(evt){
-        console.log("Mouse leave");
-        cube.setAttribute('material', 'color',"blue");
-      });
-    }
-  });
-</script>
   <a-scene>
     <a-assets timeout="30000">
       <a-asset-item id="fossils" src="fossils/scene.gltf"></a-asset-item>
     </a-assets>
 
-    <a-camera position="0 1.6 0">
+    <a-camera position="0 0 0">
         <a-entity
           cursor="fuse: false"
           position="0 0 -1"
@@ -40,7 +24,6 @@
     </a-camera>
 
     <!-- 2D environment omitted for simplicity -->
-    <a-box id="boxId" position="0 0.5 -3" rotation="0 45 0" color="blue"></a-box>
     <a-sky color="#ECECEC"></a-sky>
 
     <a-entity gltf-model="#fossils" position="0 -1.5 1" scale="0.05 0.05 0.05"></a-entity>
