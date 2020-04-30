@@ -11,13 +11,16 @@
 
 <body>
 <script type="text/javascript">
+  console.log("Registering button");
   AFRAME.registerComponent('startButton', {
     init: function () {
       var cube = document.querySelector("#boxId");
       cube.addEventListener("mouseenter",function(evt){
+        console.log("Mouse enter");
         cube.setAttribute('material', 'color',"red");
       });
       cube.addEventListener("mouseleave",function(evt){
+        console.log("Mouse leave");
         cube.setAttribute('material', 'color',"blue");
       });
     }
