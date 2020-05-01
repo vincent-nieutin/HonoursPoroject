@@ -30,11 +30,10 @@
     </a-assets>
 
     <a-camera position="0 1.6 0">
-      <a-entity cursor="fuse: false; fuseTimeout: 500"
+      <a-entity cursor="rayOrigin: mouse"
                 raycaster="interval: 200; objects: .interactible"
                 position="0 0 -0.1"
-                geometry="primitive:ring; radiusInner: 0.003; radiusOuter: 0.01"
-                material="color: black; shader: flat">
+                geometry="primitive:ring; radiusInner: 0.003; radiusOuter: 0.01">
       </a-entity>
     </a-camera>
 
