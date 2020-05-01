@@ -51,7 +51,7 @@
 
       for(var i=0; i<parts.length; i++){
         if (i%rowLength==0) zPos--;
-        document.write('<a-entity transparent="true" opacity="0.8" class="interactible" id="fossil'+parts[i]+'" cursor-listener gltf-part="src: #fossils; part: fossil'+parts[i]+'" position="'+(xStart+i%rowLength)*scale+' 1.6 '+(zPos)*scale+'" scale="'+scale+' '+scale+' '+scale+'"></a-entity>');
+        document.write('<a-entity transparent="false" opacity="0.8" class="interactible" id="fossil'+parts[i]+'" cursor-listener gltf-part="src: #fossils; part: fossil'+parts[i]+'" position="'+(xStart+i%rowLength)*scale+' 1.6 '+(zPos)*scale+'" scale="'+scale+' '+scale+' '+scale+'"></a-entity>');
       };
 
     </script>
