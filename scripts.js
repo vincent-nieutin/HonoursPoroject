@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   document.getElementById("hide_selected").addEventListener("click", (e)=>{
     if(selected){
-      document.getElementById(selected).setAttribute("visible","false");
-      document.getElementById(selected).className ="";
+      var element = document.getElementById(selected);
+      element.setAttribute('visible','false');
+      element.setAttribute("opacity","1");
+      element.className ="";
       hiddenParts.push(selected);
       selected = null;
     }
@@ -14,9 +16,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   document.getElementById("unhide_all").addEventListener("click", (e)=>{
     hiddenParts.forEach((item, i) => {
-      document.getElementById(item).setAttribute("visible","true");
-      document.getElementById(item).setAttribute("opacity","1");
-      document.getElementById(item).className ="interactible";
+      var element = document.getElementById(item);
+      element.setAttribute('visible','true');
+      element.className ="interactible";
     });
     hiddenParts = [];
   })
