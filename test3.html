@@ -9,7 +9,25 @@
   <script>
     var hiddenParts = [];
     var selected;
-    
+
+    var FizzyText = function() {
+      this.message = 'dat.gui';
+      this.speed = 0.8;
+      this.displayOutline = false;
+      this.explode = function() {
+        console.log("BOOM!");
+      };
+    };
+
+    window.onload = function() {
+      var text = new FizzyText();
+      var gui = new dat.GUI();
+      gui.add(text, 'message');
+      gui.add(text, 'speed', -5, 5);
+      gui.add(text, 'displayOutline');
+      gui.add(text, 'explode');
+    };
+
     AFRAME.registerComponent('cursor-listener', {
       init: function () {
         this.el.addEventListener('mousedown', function (evt) {
@@ -53,10 +71,10 @@
 
 <body>
   <a-scene>
-    <div style="position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;">
+    <!--<div style="position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;">
       <button id="hide_selected">Hide selected</button>
       <button id="unhide_all">Unhide all</button>
-    </div>
+    </div>-->
     <a-assets timeout="30000">
       <a-asset-item id="fossils" src="fossils/scene.gltf"></a-asset-item>
     </a-assets>
