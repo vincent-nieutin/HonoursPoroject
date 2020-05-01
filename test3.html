@@ -6,7 +6,7 @@
   <title></title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
-  <script src="scripts.js"></script>
+  <!--<script src="scripts.js"></script>-->
   <script>
     AFRAME.registerComponent('cursor-listener', {
       init: function () {
@@ -15,6 +15,34 @@
           this.setAttribute("opacity","0.8");
           selected = this.id;
           console.log("Currently selected: "+selected);
+        });
+      }
+    });
+
+    AFRAME.registerComponent('hide-button-listener', {
+      init: function () {
+        this.el.addEventListener('mouseup', function (evt) {
+          if(selected){
+            var element = document.getElementById(selected);
+            element.setAttribute('visible','false');
+            element.setAttribute("opacity","1");
+            element.className ="";
+            hiddenParts.push(selected);
+            selected = null;
+          }
+        });
+      }
+    });
+
+    AFRAME.registerComponent('unhide-button-listener', {
+      init: function () {
+        this.el.addEventListener('mouseup', function (evt) {
+          hiddenParts.forEach((item, i) => {
+            var element = document.getElementById(item);
+            element.setAttribute('visible','true');
+            element.className ="interactible";
+          });
+          hiddenParts = [];
         });
       }
     });
@@ -32,6 +60,13 @@
     </a-assets>
 
     <a-camera position="0 1.6 0">
+      <a-plane class="interactible" hide-button-listener color="#AAA" shader="flat" position="-0.14 0.012 -0.1" height="0.011" width="0.03">
+        <a-text value="Hide selected" position="-0.0125 0 0" height="0.1" width="0.1"></a-text>
+      </a-plane>
+      <a-plane class="interactible" unhide-button-listener color="#AAA" shader="flat" position="-0.14 0 -0.1" height="0.011" width="0.03">
+        <a-text value="Unhide all" position="-0.0125 0 0" height="0.1" width="0.1"></a-text>
+      </a-plane>
+
       <a-entity cursor="rayOrigin: mouse"
                 raycaster="interval: 200; objects: .interactible"
                 position="0 0 -0.1">
