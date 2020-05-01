@@ -11,6 +11,8 @@
     AFRAME.registerComponent('cursor-listener', {
       init: function () {
         this.el.addEventListener('mousedown', function (evt) {
+          if(selected && selected != this.Id) document.getElementById(selected).setAttribute("material","opacity","1");
+          this.setAttribute("material","opacity","0.8");
           selected = this.id;
           console.log("Currently selected: "+selected);
         });
