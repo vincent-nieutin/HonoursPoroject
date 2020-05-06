@@ -1,4 +1,4 @@
 # HonoursPoroject
-Final year honours project
+Final year Honours Project
 
-accesible here: https://vincent-nieutin.github.io/HonoursProject/
+Accessible here: https://vincent-nieutin.github.io/HonoursProject/
